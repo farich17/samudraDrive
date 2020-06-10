@@ -1,0 +1,10 @@
+{
+  "/secure": {
+    "target": "http://localhost/bedrive2/server/public",
+    "secure": false
+  },
+  "/__clockwork": {
+    "target": "http://localhost/bedrive2/server/public",
+    "secure": false
+  }
+}

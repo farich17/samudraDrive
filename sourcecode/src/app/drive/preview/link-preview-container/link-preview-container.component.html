@@ -1,0 +1,16 @@
+<link-preview-password-panel *ngIf="passwordPanelVisible$ | async; else filePreview" [link]="link$ | async" (passwordValid)="setValidPassword($event)"></link-preview-password-panel>
+
+<ng-template #filePreview>
+    <file-preview-toolbar [showLogo]="true" [disableDownload]="!(link$ | async)?.allow_download">
+        <a mat-flat-button color="primary" routerLink="/login" *ngIf="!currentUser.isLoggedIn()" trans>Sign In</a>
+        <button
+                mat-flat-button
+                color="primary"
+                (click)="import()"
+                *ngIf="!(entryAlreadyImported$ | async) && currentUser.isLoggedIn()"
+                trans
+        >Import</button>
+    </file-preview-toolbar>
+    <ad-host slot="ads.filePreview"></ad-host>
+    <preview-container [files]="entries$ | async" [class.has-ad]="settings.has('ads.filePreview')"></preview-container>
+</ng-template>

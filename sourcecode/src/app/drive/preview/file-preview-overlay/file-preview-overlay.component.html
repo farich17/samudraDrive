@@ -1,0 +1,6 @@
+<file-preview-toolbar [showCloseButton]="true" (closed)="closeOverlay()">
+    <button mat-icon-button (click)="openContextMenu()" #moreOptionsButton>
+        <mat-icon svgIcon="more-vert"></mat-icon>
+    </button>
+</file-preview-toolbar>
+<preview-container [files]="entries" #previewContainer></preview-container>

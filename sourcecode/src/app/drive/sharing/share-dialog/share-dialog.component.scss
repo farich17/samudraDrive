@@ -1,0 +1,23 @@
+@import "../../../../scss/variables";
+
+share-dialog {
+  .emails-container {
+    display: flex;
+    min-height: 54px;
+
+    chip-input {
+      flex: 1 1 auto;
+    }
+
+    //don't scale action button height with chip container height
+    .mat-flat-button {
+      height: 54px;
+      border: 1px solid $site-border-color-200;
+      border-left: none;
+    }
+  }
+
+  .mat-tab-body {
+    padding: 15px 0;
+  }
+}
